@@ -24,9 +24,11 @@ const container = document.querySelector('#app-container');
 
 // render
 ReactDOM.render(
+  <AppContainer>
     <Provider store={store}>
       <App />
     </Provider>
+  </AppContainer>
     , container
 );
 
@@ -35,7 +37,9 @@ if (module.hot) {
     module.hot.accept('./components/App', () => {
         ReactDOM.render(
           <AppContainer>
-            <App />
+            <Provider store={store}>
+              <App />
+            </Provider>
           </AppContainer>
           , container
       );

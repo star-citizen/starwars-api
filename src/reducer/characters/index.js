@@ -1,4 +1,4 @@
-import SET_CHARACTERS from './actions';
+import { SET_CHARACTERS } from './actions';
 
 const initialState = [];
 
@@ -9,4 +9,4 @@ export default (state = initialState, action) => {
         default:
           return state;
     }
-}
+};
