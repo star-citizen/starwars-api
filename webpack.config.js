@@ -6,6 +6,7 @@ module.exports = {
     'react-hot-loader/patch',
     './src/app.js',
   ],
+  devtool: 'cheap-module-source-map',
   output: {
     path: path.resolve(__dirname, './build'),
     filename: 'app.bundle.js',
@@ -25,5 +26,10 @@ module.exports = {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
   ],
 };
