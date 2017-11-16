@@ -4,6 +4,24 @@ export const SET_CURRENT_CHARACTER = 'SET_CURRENT_CHARACTER';
 export const SET_CHARACTER_PROFILE = 'SET_CHARACTER_PROFILE';
 export const SET_CHARACTER_WORLD = 'SET_CHARACTER_WORLD';
 export const SET_CHARACTER_MOVIES = 'SET_CHARACTER_MOVIES';
+export const SET_CHARACTER_SPECIES = 'SET_CHARACTER_SPECIES';
+
+// get character species
+export function getCharacterSpecies(speciesUrl) {
+    return dispatch =>
+      fetch(speciesUrl)
+        .then(res => res.json())
+        .then(species =>
+          dispatch(setCharacterSpecies(species))
+        );
+}
+// set character species
+export function setCharacterSpecies(species) {
+    return {
+        type: SET_CHARACTER_SPECIES,
+        species,
+    };
+}
 
 // set character movies
 export function setCharacterMovies(movies) {
@@ -57,6 +75,8 @@ export function getCharacterProfile(id) {
             dispatch(getCharacterWorld(profile.homeworld));
             // get character movies from profile
             dispatch(getCharacterMovies(profile.films));
+            // get character species from profile
+            dispatch(getCharacterSpecies(profile.species));
         });
 }
 // set character

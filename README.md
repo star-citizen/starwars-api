@@ -24,3 +24,4 @@ npm run build
 
 # Todo:
 - Add styles
+- Add filter

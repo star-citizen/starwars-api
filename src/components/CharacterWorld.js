@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// if 'unknown' don't display
 const isKnown = text => text && text !== 'unknown';
 
 const CharacterWorld = ({ world }) =>
