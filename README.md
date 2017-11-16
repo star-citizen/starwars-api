@@ -23,5 +23,6 @@ npm run build
 ```
 
 # Todo:
+- Add starships
 - Add styles
 - Add filter
